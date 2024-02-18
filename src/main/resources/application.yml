@@ -1,0 +1,19 @@
+server:
+    servlet:
+        context-path: /api
+# spring:
+    # datasource:
+    #     driverClassName: org.postgresql.Driver
+    #     url: jdbc:postgresql://localhost:5432/treina_springboot
+    #     username: tcb
+    #     password: tcb
+    # jpa:
+    #     properties:
+    #         hibernate:
+    #             jdbc:
+    #                 lob:
+    #                     non_contextual_creation: true
+    #         dialect:
+    #             org.hibernate.dialect.PostgreSQLDialect
+    #     database: POSTGRESQL
+    #     show-sql: true
