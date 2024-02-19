@@ -1,19 +1,20 @@
 server:
     servlet:
         context-path: /api
-# spring:
-    # datasource:
-    #     driverClassName: org.postgresql.Driver
-    #     url: jdbc:postgresql://localhost:5432/treina_springboot
-    #     username: tcb
-    #     password: tcb
-    # jpa:
-    #     properties:
-    #         hibernate:
-    #             jdbc:
-    #                 lob:
-    #                     non_contextual_creation: true
-    #         dialect:
-    #             org.hibernate.dialect.PostgreSQLDialect
-    #     database: POSTGRESQL
-    #     show-sql: true
+spring:
+    datasource:
+        driverClassName: org.h2.Driver
+        url: jdbc:h2:tcp://localhost:9092/C:/data/treinamento
+        username: sa
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+        properties:
+            hibernate:
+                format_sql: true
+    h2:
+        console:
+            enabled: true
+            path: /h2-console
