@@ -2,6 +2,10 @@ package com.dimensa.trenamento.springboot.produtos.model;
 
 import java.math.BigDecimal;
 
+import com.dimensa.trenamento.springboot.produtos.dto.ProdutoAtualizaDTO;
+import com.dimensa.trenamento.springboot.produtos.dto.ProdutoDTO;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,6 +25,16 @@ public class Produto {
     private String descricao;
 
     private BigDecimal valor;
+
+    public Produto() {
+    }
+
+    public Produto(ProdutoDTO dto) {
+        id = dto.getId();
+        nome = dto.getNome();
+        descricao = dto.getDescricao();
+        valor = dto.getValor();
+    }
 
     public Long getId() {
         return id;
@@ -52,6 +66,20 @@ public class Produto {
 
     public void setValor(BigDecimal valor) {
         this.valor = valor;
+    }
+
+    public void atualiza(ProdutoAtualizaDTO dto) {
+        if (dto.getNome() != null) {
+            this.nome = dto.getNome();
+        }
+
+        if (dto.getDescricao() != null) {
+            this.descricao = dto.getDescricao();
+        }
+
+        if (dto.getValor() != null) {
+            this.valor = dto.getValor();
+        }
     }
 
 }

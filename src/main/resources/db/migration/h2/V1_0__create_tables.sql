@@ -1,6 +1,6 @@
 CREATE TABLE produto (
     id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    name varchar(200),
+    nome varchar(200),
     descricao varchar(255),
     valor NUMERIC(8, 2)
 );
