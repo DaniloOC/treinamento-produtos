@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ControllerAdvice
-public class ProdutoNotFoundAdvice {
+public class ProdutoExceptionHandler {
 
     @ResponseBody
     @ExceptionHandler(ProdutoNotFoundException.class)
